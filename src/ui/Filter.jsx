@@ -41,6 +41,10 @@ function Filter({ filterField, options }) {
 
   function handleClick(value) {
     searchParams.set(filterField, value);
+
+    // fix pagination + filter bug
+    searchParams.set("page", 1);
+
     setSearchParams(searchParams);
   }
 
