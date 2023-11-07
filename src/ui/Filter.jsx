@@ -43,7 +43,7 @@ function Filter({ filterField, options }) {
     searchParams.set(filterField, value);
 
     // fix pagination + filter bug
-    searchParams.set("page", 1);
+    if (searchParams.get("page")) searchParams.set("page", 1);
 
     setSearchParams(searchParams);
   }
